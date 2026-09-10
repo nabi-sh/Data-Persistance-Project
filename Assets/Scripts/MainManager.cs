@@ -17,7 +17,7 @@ public class MainManager : MonoBehaviour
     private bool m_Started = false;
     private int m_Points;
 
-    private bool m_GameOver = false;
+    public bool m_GameOver = false;
 
     // MIGRATED: InputAction replaces Input.GetKeyDown(KeyCode.Space)
     private InputAction m_LaunchAction;
@@ -86,7 +86,7 @@ public class MainManager : MonoBehaviour
     void AddPoint(int point)
     {
         m_Points += point;
-        ScoreText.text = $"Score : {m_Points}";
+        ScoreText.text = $"Score : {GameManager.Instance.playerName} : {m_Points}";
     }
 
     public void GameOver()
